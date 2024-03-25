@@ -197,7 +197,7 @@ textarea.form-control {
         <h5>趣味</h5>
         </label>
         <div class="">
-          <textarea rows="5" class="form-control" name="hobby" id="topic">{{ $userProfile->hobby }}</textarea>
+          <textarea rows="5" class="form-control" name="hobby" id="hobby">{{ $userProfile->hobby }}</textarea>
         </div>
       </div>      
       
@@ -354,79 +354,82 @@ textarea.form-control {
         </div>
       </div>
 
-      <h5>第一子</h5>
+      <h5><strong>第一子</strong></h5>
         <div class="child-fieldset">
           <label>子供の名前:</label>
-          <input type="text" name="name_of_child1" value="{{ $userProfile->name_of_child1 }}" />　
+          <input type="text" name="name_of_child1"/>　
 
           <label>子供の性別:</label>
           <select name="sex1" value="$userProfile->sex1">
             <option value="">選択してください</option>
-            <option value="1" {{ $userProfile->sex1 == 1 ? 'selected' : '' }}>男</option>
-            <option value="2" {{ $userProfile->sex1 == 2 ? 'selected' : '' }}>女</option>
-            <option value="3" {{ $userProfile->sex1 == 3 ? 'selected' : '' }}>回答しない</option>
+            <option value="1">男</option>
+            <option value="2">女</option>
+            <option value="3">回答しない</option>
           </select>　
 
           <label>子供の生年月日:</label>
-          <input type="date" name="birth_date_of_child1" value={{ $userProfile->birth_date_of_child1 }} />
+          <input type="date" name="birth_date_of_child1"/>
         </div>
         <br>
 
-        <h5>第二子</h5>
+        <h5><strong>第二子</strong></h5>
         <div class="child-fieldset">
           <label>子供の名前:</label>
-          <input type="text" name="name_of_child2" value="{{ $userProfile->name_of_child2 }}" />　
+          <input type="text" name="name_of_child2"/>　
         
           <label>子供の性別:</label>
           <select name="sex2">
             <option value="">選択してください</option>
-            <option value="1" {{ $userProfile->sex2 == 1 ? 'selected' : '' }}>男</option>
-            <option value="2" {{ $userProfile->sex2 == 2 ? 'selected' : '' }}>女</option>
-            <option value="3" {{ $userProfile->sex2 == 3 ? 'selected' : '' }}>回答しない</option>
+            <option value="1">男</option>
+            <option value="2">女</option>
+            <option value="3">回答しない</option>
           </select>　
         
           <label>子供の生年月日:</label>
-          <input type="date" name="birth_date_of_child2" value="{{ $userProfile->birth_date_of_child2 }}" />
+          <input type="date" name="birth_date_of_child2"/>
         </div>
         <br>
         
-        <h5>第三子</h5>
+
+        <h5><strong>第三子</strong></h5>
         <div class="child-fieldset">
           <label>子供の名前:</label>
-          <input type="text" name="name_of_child3" value="{{ $userProfile->name_of_child3 }}" />　
+          <input type="text" name="name_of_child3"/>　
         
           <label>子供の性別:</label>
           <select name="sex3">
             <option value="">選択してください</option>
-            <option value="1" {{ $userProfile->sex3 == 1 ? 'selected' : '' }}>男</option>
-            <option value="2" {{ $userProfile->sex3 == 2 ? 'selected' : '' }}>女</option>
-            <option value="3" {{ $userProfile->sex3 == 3 ? 'selected' : '' }}>回答しない</option>
+            <option value="1">男</option>
+            <option value="2">女</option>
+            <option value="3">回答しない</option>
           </select>　
         
           <label>子供の生年月日:</label>
-          <input type="date" name="birth_date_of_child3" value="{{ $userProfile->birth_date_of_child3 }}" />
+          <input type="date" name="birth_date_of_child3"/>
         </div>
         <br>
         
-        <h5>第四子</h5>
+
+        <h5><strong>第四子</strong></h5>
         <div class="child-fieldset">
           <label>子供の名前:</label>
-          <input type="text" name="name_of_child4" value="{{ $userProfile->name_of_child4 }}" />　
+          <input type="text" name="name_of_child4"/>　
         
           <label>子供の性別:</label>
           <select name="sex4">
             <option value="">選択してください</option>
-            <option value="1" {{ $userProfile->sex4 == 1 ? 'selected' : '' }}>男</option>
-            <option value="2" {{ $userProfile->sex4 == 2 ? 'selected' : '' }}>女</option>
-            <option value="3" {{ $userProfile->sex4 == 3 ? 'selected' : '' }}>回答しない</option>
+            <option value="1">男</option>
+            <option value="2">女</option>
+            <option value="3">回答しない</option>
           </select>　
         
           <label>子供の生年月日:</label>
-          <input type="date" name="birth_date_of_child4" value="{{ $userProfile->birth_date_of_child4 }}" />
+          <input type="date" name="birth_date_of_child4"/>
         </div>
         <br>
         
-        <h5>第五子</h5>
+
+        <h5><strong>第五子</strong></h5>
         <div class="child-fieldset">
           <label>子供の名前:</label>
           <input type="text" name="name_of_child5" value="{{ $userProfile->name_of_child5 }}" />　
