@@ -99,10 +99,10 @@ Route::delete('/zoom/{bookId}/delete',[EventController::class, 'deleteZoom'])->n
 
 
 // ユーザーのプロフィールページを表示するためのルート
-Route::get('/mypage/{id}', [App\Http\Controllers\UserProfileController::class, 'show'])->name('mypage.show');
+Route::get('/mypage/{id}', [UserProfileController::class, 'show'])->name('mypage.show');
 
 //ユーザー検索
-Route::get('/user/search', [App\Http\Controllers\UserProfileController::class, 'search'])->name('user.search');
+Route::get('/user/search', [UserProfileController::class, 'search'])->name('user.search');
 
 
 Route::middleware('auth')->group(function () {
