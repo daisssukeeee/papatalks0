@@ -194,7 +194,7 @@ textarea.form-control {
         <h5>趣味</h5>
         </label>
         <div class="">
-          <textarea rows="5" class="form-control" name="hobby" id="topic">{{ $userProfile->hobby }}</textarea>
+          <textarea rows="5" class="form-control" name="hobby" id="hobby"></textarea>
         </div>
       </div>            
 
@@ -330,7 +330,7 @@ textarea.form-control {
         </div>
       </div>
 
-      <h5>第一子</h5>
+      <h5><strong>第一子</strong></h5>
         <div class="child-fieldset">
           <label>子供の名前:</label>
           <input type="text" name="name_of_child1"/>　
@@ -348,7 +348,7 @@ textarea.form-control {
         </div>
         <br>
 
-        <h5>第二子</h5>
+        <h5><strong>第二子</strong></h5>
         <div class="child-fieldset">
           <label>子供の名前:</label>
           <input type="text" name="name_of_child2"/>　
@@ -367,7 +367,7 @@ textarea.form-control {
         <br>
         
 
-        <h5>第三子</h5>
+        <h5><strong>第三子</strong></h5>
         <div class="child-fieldset">
           <label>子供の名前:</label>
           <input type="text" name="name_of_child3"/>　
@@ -386,7 +386,7 @@ textarea.form-control {
         <br>
         
 
-        <h5>第四子</h5>
+        <h5><strong>第四子</strong></h5>
         <div class="child-fieldset">
           <label>子供の名前:</label>
           <input type="text" name="name_of_child4"/>　
@@ -405,7 +405,7 @@ textarea.form-control {
         <br>
         
 
-        <h5>第五子</h5>
+        <h5><strong>第五子</strong></h5>
         <div class="child-fieldset">
           <label>子供の名前:</label>
           <input type="text" name="name_of_child5"/>　
