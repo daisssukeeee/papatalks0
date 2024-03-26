@@ -115,25 +115,10 @@ textarea.form-control {
 
   <div class="settings">
  
-      <div class="form-group row">
-        <label class="">
-        <h5>プロフィール画像</h5>
-        </label>
-        <div class="">
-          {{-- 画像表示 --}}
-          @if(true)
-            <img class="rounded-circle" style="width: 100px;" src="{{ asset('profile_images/HBtIKCH2ExSgQvTkyy0sIOtDrPaGWE5cxDK2YYb0.avif') }}" />
-          @else
-            <img class="rounded-circle" style="width: 100px;" src="https://res.cloudinary.com/air-rec/image/upload/c_fit,f_auto,q_auto,w_200/wcyllyv4cxq19busiw4w.jpg" />
-          @endif
-          <div class="mt-3"><label class="form-label">プロフィール画像を変更</label></div>
-          <input type="file" class="form-control form-control-file" name="picture" id="picture">
-        </div>
-        {{-- <div>
-          <x-picture-input />
-          <x-input-error class="mt-2" :messages="$errors->get('picture')" />
-        </div> --}}
-      </div>
+    <div>
+      <x-picture-input />
+      <x-input-error class="mt-2" :messages="$errors->get('picture')" />
+    </div>
 
       {{-- <div class="form-group row">
         <label class="" for="user_email">

@@ -354,7 +354,28 @@ textarea.form-control {
         </div>
       </div>
 
-      <h5><strong>第一子</strong></h5>
+
+      @for ($i = 1; $i <= 5; $i++)
+        <h5><strong>第{{ $i }}子</strong></h5>
+        <div class="child-fieldset">
+          <label>子供の名前:</label>
+          <input type="text" name="name_of_child{{ $i }}" value="{{ old('name_of_child'.$i, $userProfile->{'name_of_child'.$i} ?? '') }}" />
+    
+          <label>子供の性別:</label>
+          <select name="sex{{ $i }}">
+            <option value="">選択してください</option>
+            <option value="1" @if(old('sex'.$i, $userProfile->{'sex'.$i} ?? '') == 1) selected @endif>男</option>
+            <option value="2" @if(old('sex'.$i, $userProfile->{'sex'.$i} ?? '') == 2) selected @endif>女</option>
+            <option value="3" @if(old('sex'.$i, $userProfile->{'sex'.$i} ?? '') == 3) selected @endif>回答しない</option>
+          </select>
+    
+          <label>子供の生年月日:</label>
+          <input type="date" name="birth_date_of_child{{ $i }}" value="{{ old('birth_date_of_child'.$i, $userProfile->{'birth_date_of_child'.$i} ?? '') }}" />
+        </div>
+        <br>
+      @endfor
+
+      {{-- <h5><strong>第一子</strong></h5>
         <div class="child-fieldset">
           <label>子供の名前:</label>
           <input type="text" name="name_of_child1"/>　
@@ -445,7 +466,7 @@ textarea.form-control {
           <label>子供の生年月日:</label>
           <input type="date" name="birth_date_of_child5" value="{{ $userProfile->birth_date_of_child5 }}" />
         </div>
-        <br>
+        <br> --}}
 
 
 

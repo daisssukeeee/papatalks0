@@ -56,26 +56,8 @@ class UserprofileController extends Controller
             // 必要に応じて他のフィールドを追加
         ]);
     
-        // $data = $request->all();
-    
-        $data = $request->except(['picture']);
-
-        if ($request->hasFile('picture')) {
-            $path = $request->file('picture')->store('public/profile_images');
-            $filename = basename($path);
-            $data['picture'] = $filename; // ファイル名を$data配列に追加
-        }
-    
-
-
-
-        
-
         $userProfile = new UserProfile();
-        // $userProfile のその他の属性を設定
-
-        // Userprofile::create($data);
-
+    
         // ユーザーIDの設定
         $userProfile->user_id = Auth::id(); // 認証されたユーザーのID
         
@@ -111,6 +93,15 @@ class UserprofileController extends Controller
             $userProfile->{'sex'.$i} = $request->input('sex'.$i);
             $userProfile->{'birth_date_of_child'.$i} = $request->input('birth_date_of_child'.$i);
         }        
+
+        if ($request->hasFile('picture')) {
+            // 画像ファイルがアップロードされている場合
+            $path = $request->file('picture')->store('profile_images', 'public');
+            // ストレージのパスを保存用のパスに変換（必要に応じてStorage::url($path)を使用）
+            $userProfile->profile_photo_path = $path; // 保存した画像のパスを設定
+        }        
+
+
 
         $userProfile->save();
 
