@@ -117,10 +117,7 @@ textarea.form-control {
 
   <div class="settings">
 
-    <form action="{{ route('userprofile.update', $userProfile->id) }}" method="POST" enctype="multipart/form-data">
-      @csrf
-      @method('PUT')
-  
+    
       <div class="form-group row">
         <label>
           <h5>プロフィール画像</h5>
