@@ -252,9 +252,17 @@ class UserprofileController extends Controller
         // $userProfile->interests()->sync($request->interests);
 
         if ($request->hasFile('picture')) {
+            // 古い画像が存在する場合は削除
+            if ($userProfile->picture && Storage::disk('public')->exists($userProfile->picture)) {
+                Storage::disk('public')->delete($userProfile->picture);
+            }
+    
+            // 新しい画像を保存
             $path = $request->file('picture')->store('profile_images', 'public');
             $userProfile->picture = $path;
         }
+    
+        $userProfile->save();
             
 
         for ($i = 1; $i <= 6; $i++) {
