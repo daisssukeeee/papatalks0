@@ -251,6 +251,12 @@ class UserprofileController extends Controller
         $userProfile = UserProfile::where('user_id', $id)->firstOrFail();
         // $userProfile->interests()->sync($request->interests);
 
+        if ($request->hasFile('picture')) {
+            $path = $request->file('picture')->store('profile_images', 'public');
+            $userProfile->picture = $path;
+        }
+            
+
         for ($i = 1; $i <= 6; $i++) {
             $fieldName = 'purpose' . $i; 
             $userProfile->$fieldName = $request->input($fieldName, 0); 

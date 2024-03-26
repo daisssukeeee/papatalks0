@@ -124,11 +124,11 @@ textarea.form-control {
         <div class="">
           {{-- 画像表示 --}}
           {{-- @if(auth()->user()->userProfile && auth()->user()->userProfile->picture) --}}
-          @if(true)
-            <img class="rounded-circle" style="width: 100px;" src="{{ asset('profile_images/HBtIKCH2ExSgQvTkyy0sIOtDrPaGWE5cxDK2YYb0.avif') }}" />
-          @else
-            <img class="rounded-circle" style="width: 100px;" src="https://res.cloudinary.com/air-rec/image/upload/c_fit,f_auto,q_auto,w_200/wcyllyv4cxq19busiw4w.jpg" />
-          @endif
+            @if($userProfile->picture)
+              <img class="rounded-circle" style="width: 100px;" src="{{ Storage::disk('public')->url($userProfile->picture) }}" />
+            @else
+              <img class="rounded-circle" style="width: 100px;" src="https://res.cloudinary.com/air-rec/image/upload/c_fit,f_auto,q_auto,w_200/wcyllyv4cxq19busiw4w.jpg" />
+            @endif
           <div class="mt-3"><label class="form-label">プロフィール画像を変更</label></div>
           <input type="file" class="form-control form-control-file" name="picture" id="picture">
         </div>
