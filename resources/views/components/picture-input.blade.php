@@ -2,7 +2,7 @@
     <div class="mr-3">
         <img
              id="preview"
-             src="{{ isset(Auth::user()->picture) ? asset('storage/' . Auth::user()->picture) : asset('images/user_icon.png') }}"
+             src="{{ auth()->user()->userProfile && auth()->user()->userProfile->picture ? Storage::url(auth()->user()->userProfile->picture) : asset('images/image3.jpeg') }}"
              alt=""
              class="w-16 h-16 rounded-full object-cover border-none bg-gray-200">
     </div>

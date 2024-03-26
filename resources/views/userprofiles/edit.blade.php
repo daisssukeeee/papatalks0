@@ -122,20 +122,25 @@ textarea.form-control {
         <label>
           <h5>プロフィール画像</h5>
         </label>
-        <div>
-          {{-- 画像表示 --}}
+
+          <div>
+              <x-picture-input />
+              <x-input-error class="mt-2" :messages="$errors->get('picture')" />
+          </div>
+
+
+
+        {{-- <div>
           @if($userProfile->picture)
-            {{-- "public" ディスクから画像の URL を取得 --}}
             <img class="rounded-circle" style="width: 100px;" src="{{ Storage::disk('public')->url($userProfile->picture) }}" />
           @else
-            {{-- デフォルト画像 --}}
             <img class="rounded-circle" style="width: 100px;" src="https://res.cloudinary.com/air-rec/image/upload/c_fit,f_auto,q_auto,w_200/wcyllyv4cxq19busiw4w.jpg" />
           @endif
           <div class="mt-3">
             <label class="form-label">プロフィール画像を変更</label>
             <input type="file" class="form-control form-control-file" name="picture" id="picture">
           </div>
-        </div>
+        </div> --}}
       </div>
 
 
