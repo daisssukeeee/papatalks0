@@ -259,7 +259,7 @@ class UserprofileController extends Controller
     
             // 新しい画像を保存
             $path = $request->file('picture')->store('profile_images', 'public');
-            $userProfile->picture = $path;
+            $userProfile->profile_photo_path = $path;
         }
     
         $userProfile->save();

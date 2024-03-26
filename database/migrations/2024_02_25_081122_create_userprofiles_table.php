@@ -17,6 +17,7 @@ return new class extends Migration
 
             $table->string('profile_name', 30);
             $table->string('picture')->nullable();
+            $table->string('profile_photo_path')->nullable();
             $table->string('link_x')->nullable();
             $table->string('link_fb')->nullable();
             $table->string('link_insta')->nullable();

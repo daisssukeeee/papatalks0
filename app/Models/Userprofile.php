@@ -14,6 +14,7 @@ class Userprofile extends Model
         'user_id',
         'profile_name',
         'picture',
+        'profile_photo_path', 
         'link_x',
         'link_fb',
         'link_insta',
