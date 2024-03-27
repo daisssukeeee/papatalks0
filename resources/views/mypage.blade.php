@@ -6,12 +6,14 @@
         </h2>
     </x-slot>
 
+    <link href="{{ asset('css/styles.css') }}" rel="stylesheet">
 
 
     <div class="container">
         <h1>{{ $userProfile->profile_name }} のプロフィール</h1>
         <div>
-            <img src="{{ $userProfile->picture_url }}" alt="{{ $userProfile->profile_name }}" style="width: 150px; height: 150px; border-radius: 75px;">
+            <img class="rounded-circle" style="width: 100px;" 
+            src="{{ $userProfile->profile_photo_path ? Storage::url($userProfile->profile_photo_path) : 'https://res.cloudinary.com/air-rec/image/upload/c_fit,f_auto,q_auto,w_200/wcyllyv4cxq19busiw4w.jpg' }}" />
         </div>
         <p><strong>生年月日：</strong>{{ $userProfile->birth_date }}</p>
         <p><strong>居住地：</strong>{{ $userProfile->state }}</p>

@@ -1,0 +1,7 @@
+.rounded-image {
+    width: 64px; /* 画像の幅 */
+    height: 64px; /* 画像の高さ */
+    border-radius: 50%; /* これにより画像が丸く表示されます */
+    object-fit: cover; /* 画像のアスペクト比を保ちつつ、要素のボックスに完全にフィットさせます */
+}
+

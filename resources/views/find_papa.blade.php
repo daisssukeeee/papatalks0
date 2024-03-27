@@ -5,6 +5,9 @@
         </h2>
     </x-slot>
 
+    <link href="{{ asset('css/styles.css') }}" rel="stylesheet">
+
+
     <form action="{{ route('user.search') }}" method="GET">
         <div class="search">
             <div>
@@ -58,8 +61,9 @@
           <ul>
             @foreach ($userProfiles as $userProfile)
                 <div style="margin-bottom: 20px; border-bottom: 1px solid #ccc; padding-bottom: 20px;">
-                    <img class="rounded-circle" style="width: 100px;" src="https://res.cloudinary.com/air-rec/image/upload/c_fit,f_auto,q_auto,w_200/wcyllyv4cxq19busiw4w.jpg" />
-                    <p>
+                    <img class="rounded-circle" style="width: 100px;" 
+                    src="{{ $userProfile->profile_photo_path ? Storage::url($userProfile->profile_photo_path) : 'https://res.cloudinary.com/air-rec/image/upload/c_fit,f_auto,q_auto,w_200/wcyllyv4cxq19busiw4w.jpg' }}" />
+                          <p>
                         <strong>名前：<a href="{{ route('mypage.show', ['id' => $userProfile->id]) }}">{{ $userProfile->profile_name }}</a></strong>
                     </p>
                     <p>{{ $userProfile->introduction }}</p>
