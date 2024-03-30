@@ -5,12 +5,40 @@
         </h2>
     </x-slot>
 
+    <style>
+        .event-container {
+            max-width: 800px;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        .event-item {
+            padding-bottom: 20px;
+            border-bottom: 1px solid #ccc;
+            margin-bottom: 20px;
+        }
+
+        .event-item:last-child {
+            border-bottom:
+             none;
+        }
+
+        .event-title {
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+
+    </style>
+
 
     <form action="{{ route('events.search') }}" method="GET" class="search">
 
-        <div class="search">
+        <div class="search" style="padding-left: 20px;">
             <div>
-                <div class="" style="padding: 0;">
+                <div class="" style="padding-top: 15px;">
                     <p>日時</p>
                     <input  type="datetime-local" name="free" type="text" class="form-control" placeholder="" value="">
                 </div>
@@ -37,7 +65,7 @@
             </div> --}}
 
             <div>
-                <div class="" style="padding: 0;">
+                <div class="" style="padding-top: 15px;">
                     <p>コメント</p>
                     <input name="area" type="text" class="form-control"  value="">
                 </div>
@@ -46,16 +74,15 @@
 
 
 
-          <br><br>
-
-          <div class="text-center">
-            <button class="">
-                <span class="">👆1on1を検索</span>
-            </button>
-          </div>
-
           <br>
-          <h1>登録中の1on1</h1>
+
+          <x-primary-button style="margin-left: 0px;">👆１on１を検索</x-primary-button>
+
+
+          <br><br><br>
+
+    <div class="event-container">
+          <h1 class="event-title"><strong>登録中の1on1</strong></h1>
           <br>
           <ul>
               {{-- @foreach ($userProfiles as $userProfile)
@@ -70,7 +97,15 @@
               <div style="margin-bottom: 20px; border-bottom: 1px solid #ccc; padding-bottom: 20px;">
                   <p>開始日時： {{ $event->start_date }}</p>
                   <p>コメント： {{ $event->comment }}</p>
-                  <p>作成者名： {{ optional($event->userprofile)->profile_name }}</p>
+                  <p>作成者名：
+                    @if($event->userprofile)
+                        <a href="{{ route('mypage.show', ['id' => $event->userprofile->id]) }}">
+                            {{ $event->userprofile->profile_name }}
+                        </a>
+                    @else
+                        ユーザーが存在しません
+                    @endif
+                </p>
                   
                   <p>{{ $event->start_date }}: {{ $event->name }}
                       @php
@@ -85,8 +120,8 @@
                           <!-- イベント申込ボタン -->
                           <form action="{{ route('book.event', $event->id) }}" method="POST">
                               @csrf
-                              <button type="submit">イベント申込</button>
-                          </form>
+                              <x-primary-button>イベント申込</x-primary-button>
+                            </form>
                       @elseif ($isMatching)
                           <!-- マッチング済の表記 -->
                           <span>マッチング済</span>
@@ -100,13 +135,14 @@
                           <form action="{{ route('event.delete', $event->id) }}" method="POST">
                               @csrf
                               @method('DELETE')
-                              <button type="submit">削除</button>
+                              <x-primary-button>削除</x-primary-button>
                           </form>
                       @endif
                   </p>
           
               </div>
           @endforeach
+        </div>
 
           </ul>
         

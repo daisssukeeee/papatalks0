@@ -6,6 +6,13 @@
         </h2>
     </x-slot>
 
+    <style>
+        .form-group {
+            padding-top: 15px;
+            padding-left: 20px; 
+        }
+    </style>    
+
     <form action="{{ route('events.store') }}" method="POST">
         @csrf
 
@@ -30,7 +37,9 @@
 
         <input type="hidden" name="user_id" value="{{ auth()->user()->id }}">
 
-        <button type="submit">登録</button>
+        <br>
+        <x-primary-button style="margin-left: 20px;">登録</x-primary-button>
+
 
 
     </form>

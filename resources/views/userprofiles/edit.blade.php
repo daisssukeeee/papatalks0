@@ -482,7 +482,8 @@ textarea.form-control {
       {{-- <form action="{{ route('update.userprofile') }}" method="POST"> --}}
 
           <!-- 他のフィールドを追加 -->
-          <button type="submit">更新</button>
+          <x-primary-button>更新</x-primary-button>
+
       </form>
 
 

@@ -7,24 +7,25 @@
 
     <link href="{{ asset('css/styles.css') }}" rel="stylesheet">
 
+ <div style="margin-left: 20px;">
 
     <form action="{{ route('user.search') }}" method="GET">
         <div class="search">
             <div>
-                <div class="" style="padding: 0;">
+                <div class="" style="padding-top: 15px;">
                     <p>フリーワード</p>
                     <input name="free" type="text" class="form-control" placeholder="興味、趣味などで検索..." value="">
                 </div>
             </div>
 
             <div>
-                <div class="" style="padding: 0;">
+                <div class="" style="padding-top: 15px;">
                     <p>エリア</p>
                     <input name="area" type="text" class="form-control"  value="">
                 </div>
             </div>
 
-            <div>
+            {{-- <div>
                 <div class="" style="padding: 0;" >
                 <p>子供の月齢</p>
                 <select name="child_age" class="" style="width: 15%;" placeholder="選択してください">
@@ -42,21 +43,22 @@
                     <option value="5才以上">5才以上</option>
                 </select>
                 </div>
-            </div>
+            </div> --}}
 
-          <br><br>
+          <br>
 
-          <div class="text-center">
-            <button class="">
+            {{-- <button class="">
                 <span class="">👆ユーザーを検索</span>
-            </button>
-          </div>
+            </button> --}}
+            <x-primary-button style="margin-left: 0px;">👆ユーザーを検索</x-primary-button>
+
         </div>
 
     </form>
 
+          <br><br>
           <br>
-          <h1>ユーザープロフィール</h1>
+          <h1><strong>ユーザープロフィール</strong></h1>
           <br>
           <ul>
             @foreach ($userProfiles as $userProfile)
@@ -75,5 +77,5 @@
 
     
 
-
+ </div>
 </x-app-layout>
