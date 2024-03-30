@@ -121,6 +121,34 @@ class UserprofileController extends Controller
     public function show($id)
     {
         $userProfile = UserProfile::findOrFail($id);
+
+        $purposes = [
+            1 => '育児の相談をしたい',
+            2 => '育児の相談に乗ります',
+            3 => '育児の情報交換をしたい',
+            4 => '育児の日々の取り組みを気軽に話したい',
+            5 => '仕事の話がしたい',
+            6 => '趣味の話がしたい',
+        ];        
+
+        $interests = [
+            1 => 'キャリア・働き方',
+            2 => '健康・スポーツ',
+            3 => '音楽',
+            4 => '映画',
+            5 => 'カメラ',
+            6 => 'ゲーム',
+            7 => '漫画',
+            8 => '投資',
+            9 => '副業',
+            10 => '教育',
+            11 => 'ファッション',
+            12 => '英語・語学',
+            13 => '料理・グルメ',
+            14 => 'マインドフルネス',
+            15 => '医療・介護',
+        ];
+    
     
         // 登録イベント一覧（申込中または募集中のイベント）
         // イベントに対する申し込みがない場合（募集中）、または申し込みがあってもpending状態のイベントを取得
@@ -141,7 +169,7 @@ class UserprofileController extends Controller
                                  ->with('books.user.userprofile')
                                  ->get();
     
-        return view('mypage', compact('userProfile', 'eventsPending', 'eventsMatching'));
+        return view('mypage', compact('userProfile', 'eventsPending', 'eventsMatching', 'purposes', 'interests'));
     
     }    
 
@@ -364,5 +392,8 @@ class UserprofileController extends Controller
     
         return view('mypage', compact('matchedEvents'));
     }    
+
+
+    
 
 }

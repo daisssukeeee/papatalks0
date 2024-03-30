@@ -209,7 +209,7 @@
     <td>
         <ul>
         @foreach ($eventsPending as $event)
-            <li>{{ $event->name }} - 開始日時: {{ $event->start_date }}
+            <li>{{ $event->name }} 開始日時: {{ $event->start_date }}
                 @if ($event->books->isEmpty())
                     <span>募集中</span>
                 @else
